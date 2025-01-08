@@ -69,9 +69,6 @@ app.UseStaticFiles();
 //Use endpoint routing
 app.UseRouting();
 
-//Use Authentication and Authorization
-app.UseAuthentication();
-app.UseAuthorization();
 
 //This is the endpoint, Map Razorpages into Pages folder
 app.MapRazorPages();
