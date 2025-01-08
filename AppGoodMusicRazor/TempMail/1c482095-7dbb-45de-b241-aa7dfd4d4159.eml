@@ -1,9 +1,0 @@
-From: test@test.com
-Date: Wed, 08 Jan 2025 12:04:04 +0100
-Subject: Confirm your email
-Message-Id: <OX2YLGK33PU4.XKWYD765PC5D@martins-mbp-2021.local>
-To: martin_lenart@icloud.com
-MIME-Version: 1.0
-Content-Type: text/html; charset=utf-8
-
-Please confirm your account by <a href='https://localhost:5001/Account/ConfirmEmail?userId=d53da319-a97a-4c04-88b7-08dd2fd42a7a&code=Q2ZESjhOZWxIMnRXclA5S21teVphb296aGJwWllkQ3l2QUdLaDlvcFRSdlVQQlpIRVRFWnhiN3BYTmNvYlIzS29jMk9QY0xPMlo2SlFNeEZDQmtOVzNsMGYzSDBvSGQ1Tms3Zm8zd1JGS1FwT3lXeUQ1YUIxRXhhYitxdFdqMkNBVDBSQ1JzeEo2TlhSZVJuZW1waVFpUk5jLzRjVTRKK29idzVyc3ZId3B2UTVScXNWMGtVZnlBVDhHejRFWUw0N0d6Y2dISGFsSjhEWEZ0WjlBZGw1VUorV0hJYVhjQjB2diszUDJJOE9Gdk5kc05wa1BHNnFXNm5LVjNjY0dzWklLY3B1QT09'>clicking here</a>.
