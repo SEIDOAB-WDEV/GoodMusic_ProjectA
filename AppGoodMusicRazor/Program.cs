@@ -34,6 +34,11 @@ builder.Services.AddDefaultIdentity<User>(options => {
     options.SignIn.RequireConfirmedAccount = false;
 }).AddEntityFrameworkStores<DbContext.MainDbContext>();
 
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Account/Login";
+    options.AccessDeniedPath = "/Account/Login";
+});
 
 #region Injecting a dependency service to read MusicWebApi
 builder.Services.AddHttpClient(name: "MusicWebApi", configureClient: options =>
