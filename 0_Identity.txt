@@ -11,12 +11,12 @@ Steps:
 	public class User : IdentityUser<Guid>
 	{...}
 
-3. In Db Context add name spaces
+3. In Db Context, MainDbContext add name spaces
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 
-4. In Db Context have csMainDbContext inherit from IdentityDbContext instead of DbContext
-public class csMainDbContext : IdentityDbContext<User, IdentityRole<Guid>, Guid>
+4. In Db Context have MainDbContext inherit from IdentityDbContext instead of DbContext
+public class MainDbContext : IdentityDbContext<User, IdentityRole<Guid>, Guid>
 
 5. In DbContextExtensions.cs add a Service extention method defining what database Indentity should be using
 public static IServiceCollection AddIdentityConnectionsDbContext(this IServiceCollection serviceCollection, string user=null)

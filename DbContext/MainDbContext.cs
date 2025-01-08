@@ -9,13 +9,14 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Npgsql.Replication;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace DbContext;
 
 //DbContext namespace is a fundamental EFC layer of the database context and is
 //used for all Database connection as well as for EFC CodeFirst migration and database updates 
 
-public class MainDbContext : Microsoft.EntityFrameworkCore.DbContext    
+public class MainDbContext : IdentityDbContext<User, IdentityRole<Guid>, Guid>
 {
     IConfiguration _configuration;
     DatabaseConnections _databaseConnections;

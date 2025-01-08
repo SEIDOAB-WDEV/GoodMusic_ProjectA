@@ -4,6 +4,7 @@ using Services;
 using DbRepos;
 using DbContext;
 using Configuration;
+using Models;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
@@ -15,6 +16,7 @@ builder.Configuration.AddApplicationSecrets("../Configuration/Configuration.cspr
 //use multiple Database connections and their respective DbContexts
 builder.Services.AddDatabaseConnections(builder.Configuration);
 builder.Services.AddDatabaseConnectionsDbContext();
+builder.Services.AddIdentityConnectionsDbContext();
 #endregion
 
 //read in various options from appsettings.json, or ApplicationSecrets (usersecrets or azure)
@@ -22,6 +24,15 @@ builder.Services.Configure<JwtOptions>(
     builder.Configuration.GetSection(JwtOptions.Position));
 builder.Services.Configure<PasswordOptions>(
     builder.Configuration.GetSection(PasswordOptions.Position));
+
+//Add IdentityServices to DbContext.MainDbContext
+builder.Services.AddDefaultIdentity<User>(options => {
+    options.Password.RequireDigit = false;
+    options.Password.RequireLowercase = false;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = false;
+    options.SignIn.RequireConfirmedAccount = false;
+}).AddEntityFrameworkStores<DbContext.MainDbContext>();
 
 
 #region Injecting a dependency service to read MusicWebApi
@@ -69,6 +80,9 @@ app.UseStaticFiles();
 //Use endpoint routing
 app.UseRouting();
 
+//Use Authentication and Authorization
+app.UseAuthentication();
+app.UseAuthorization();
 
 //This is the endpoint, Map Razorpages into Pages folder
 app.MapRazorPages();
