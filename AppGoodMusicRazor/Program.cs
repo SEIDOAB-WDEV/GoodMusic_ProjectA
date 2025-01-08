@@ -62,6 +62,9 @@ builder.Services.AddScoped<IMusicService> (sp =>
 
 #endregion
 
+//Used for Identity email verification
+builder.Services.AddTransient<Microsoft.AspNetCore.Identity.UI.Services.IEmailSender, EmailService>();
+
 var app = builder.Build();
 
 //using Hsts and https to secure the site
