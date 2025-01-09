@@ -5,6 +5,8 @@ using DbRepos;
 using DbContext;
 using Configuration;
 using Models;
+using Microsoft.AspNetCore.Authorization;
+using AppMusicRazor.ModelAuthorization;
 
 var builder = WebApplication.CreateBuilder(args);
 //builder.Services.AddRazorPages();
@@ -73,6 +75,9 @@ builder.Services.AddScoped<IMusicService> (sp =>
 
 //Used for Identity email verification
 builder.Services.AddTransient<Microsoft.AspNetCore.Identity.UI.Services.IEmailSender, EmailService>();
+
+//Model Authorization
+builder.Services.AddSingleton<IAuthorizationHandler, MusicGroupAuthorizationHandler>();
 
 var app = builder.Build();
 
