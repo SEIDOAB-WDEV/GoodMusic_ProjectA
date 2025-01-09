@@ -31,7 +31,7 @@ builder.Services.AddDefaultIdentity<User>(options => {
     options.Password.RequireLowercase = false;
     options.Password.RequireNonAlphanumeric = false;
     options.Password.RequireUppercase = false;
-    options.SignIn.RequireConfirmedAccount = false;
+    options.SignIn.RequireConfirmedAccount = true;
 }).AddEntityFrameworkStores<DbContext.MainDbContext>();
 
 builder.Services.ConfigureApplicationCookie(options =>
