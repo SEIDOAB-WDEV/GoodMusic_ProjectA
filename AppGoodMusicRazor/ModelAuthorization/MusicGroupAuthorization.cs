@@ -56,9 +56,9 @@ public class MusicGroupAuthorizationHandler : AuthorizationHandler<OperationAuth
             {
                 //I can be very specific, for example only specific userId may delete,
                 //for example only those that created the resource (requires MusicGroup model to be updated)
-                var mg = resource;
-                if (userId.HasValue && (userId == Guid.Parse("e3fa4566-b091-4a0f-9ccd-08dd30863295")))
-                    context.Succeed(requirement);
+                // var mg = resource;
+                // if (userId.HasValue && (userId == Guid.Parse("e3fa4566-b091-4a0f-9ccd-08dd30863295")))
+                context.Succeed(requirement);
             }
 
             return Task.CompletedTask;
