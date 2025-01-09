@@ -6,7 +6,7 @@
 @inject IAuthorizationService _authorizationService;
 @{
     ViewData["Title"] = "View group";
-    var authResult = await _authorizationService.AuthorizeAsync(User, Model.MusicGroup, MusicGroupOperations.Delete);
+    var authResult = await _authorizationService.AuthorizeAsync(User, Model.MusicGroup, MusicGroupOperations.Edit);
 }
 
 <!-- Page view-group -->
